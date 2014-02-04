@@ -26,11 +26,17 @@ class Admin::LunchesController < ApplicationController
   # POST /admin/lunches.json
   def create
     @lunch = Lunch.new(lunch_params)
-
     respond_to do |format|
       if @lunch.save
-        format.html { redirect_to @lunch, notice: 'Lunch was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @lunch }
+        unless params[:lunch][:file].nil?
+          upload_file = params[:lunch][:file]
+          File.open(Rails.root.join('public', 'uploads',
+            upload_file.original_filename), 'wb') do |file|
+              file.write(upload_file.read)
+          end
+        end            
+          format.html { redirect_to @lunch, notice: 'Lunch was successfully created.' }
+          format.json { render action: 'show', status: :created, location: @lunch }
       else
         format.html { render action: 'new' }
         format.json { render json: @lunch.errors, status: :unprocessable_entity }
@@ -43,6 +49,13 @@ class Admin::LunchesController < ApplicationController
   def update
     respond_to do |format|
       if @lunch.update(lunch_params)
+        unless params[:lunch][:file].nil?
+          upload_file = params[:lunch][:file]
+          File.open(Rails.root.join('public', 'uploads',
+            upload_file.original_filename), 'wb') do |file|
+              file.write(upload_file.read)
+          end
+        end 
         format.html { redirect_to @lunch, notice: 'Lunch was successfully updated.' }
         format.json { head :no_content }
       else

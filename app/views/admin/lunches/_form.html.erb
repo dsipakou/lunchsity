@@ -1,5 +1,5 @@
 <%= form_for(@lunch) do |f| %>
-  <div>
+  <div class="column-left">
     <% if @lunch.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@lunch.errors.count, "error") %> prohibited this lunch from being saved:</h2>
@@ -13,6 +13,9 @@
     <% end %>
     <p>
       <%= f.cktext_area :content, placeholder: "Обеды" %>
+    </p>
+    <p>
+      <%= f.file_field :file %>
     </p>
   </div>
   <div class="clear"></div>
