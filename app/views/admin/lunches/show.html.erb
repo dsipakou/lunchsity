@@ -1,0 +1,16 @@
+<div class="box-header"><h1>Обеды</h1></div>
+<% if notice %><p class="warning"><%= notice %></p><% end %>
+
+<table>
+  <tbody>
+    <tr>
+      <td><strong>Текст обедов</strong></td>
+      <td><%= @lunch.content.html_safe %></td>
+    </tr>
+  </tbody>
+</table>
+<div class="action_bar">
+<%= link_to 'Редактировать', edit_lunch_path(@lunch), class: "button" %>
+<%= link_to 'Назад', lunches_path %>
+</div>
+

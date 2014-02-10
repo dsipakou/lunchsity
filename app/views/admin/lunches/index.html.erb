@@ -1,0 +1,22 @@
+<div class="box-header"><h1>Обеды</h1></div>
+<div class="dataTables_wrapper">
+    <table>
+        <thead>
+            <tr>
+                <th class="odd"><% if @lunches.size > 0 %>Текст обедов<% end %></th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @lunches.each do |lunch| %>
+                <tr>
+                    <td class="odd"><%= truncate(lunch.content.html_safe, :length => 10)  %></td>
+                    <td class="odd" style="border-right: 0;"><%= link_to (image_tag "actions-open.png"), lunch %></td>
+                    <td class="odd" style="border-right: 0;"><%= link_to (image_tag "actions-edit.png"), edit_lunch_path(lunch) %></td>
+                    <td class="odd"><%= link_to (image_tag "actions-delete.png"), lunch, method: :delete, data: { confirm: 'Ололошки, точно удалить?' } %></td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+    <div class="action_bar nomargin"><%= link_to 'Новый текст обедов', new_lunch_path, class: "button small" if @lunches.empty? %></div>
+</div>
+

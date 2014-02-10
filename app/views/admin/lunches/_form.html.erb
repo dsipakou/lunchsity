@@ -1,0 +1,24 @@
+<%= form_for(@lunch) do |f| %>
+  <div>
+    <% if @lunch.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@lunch.errors.count, "error") %> prohibited this lunch from being saved:</h2>
+
+        <ul>
+        <% @lunch.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <p>
+      <%= f.cktext_area :content, placeholder: "Обеды" %>
+    </p>
+  </div>
+  <div class="clear"></div>
+  <div class="action_bar">
+    <%= f.submit "Сохранить", class: "button blue" %>
+    <%= link_to 'Назад', lunches_path %>
+  </div>
+<% end %>
+

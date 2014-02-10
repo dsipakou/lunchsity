@@ -1,0 +1,23 @@
+<div class="box-header"><h1>Телефон</h1></div>
+<% if notice %><p class="warning"><%= notice %></p><% end %>
+
+<table>
+  <tbody>
+    <tr>
+      <td><strong>Номер телефона</strong></td>
+      <td><%= @phone.number %></td>
+    </tr>
+    <tr>
+      <td><strong>Оператор</strong></td>
+      <td><%= @phone.operator %></td>
+    </tr>
+    <tr>
+      <td><strong>Телефон/Факс</strong></td>
+      <td><%= @phone.phonetype %></td>
+    </tr>
+  </tbody>
+</table>
+<div class="action_bar">
+<%= link_to 'Редактировать', edit_phone_path(@phone), class: "button" %>
+<%= link_to 'Назад', phones_path %>
+</div>

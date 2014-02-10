@@ -1,0 +1,24 @@
+<%= form_for(@commerce) do |f| %>
+  <div>
+    <% if @commerce.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@commerce.errors.count, "error") %> prohibited this commerce from being saved:</h2>
+
+        <ul>
+        <% @commerce.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <p>
+      <%= f.cktext_area :content, placeholder: "Текст коммерческого предложения" %>
+    </p>
+  </div>
+  <div class="clear"></div>
+  <div class="action_bar">
+    <%= f.submit "Сохранить", class: "button blue" %>
+    <%= link_to 'Назад', commerces_path %>
+  </div>
+<% end %>
+

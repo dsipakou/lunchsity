@@ -1,0 +1,16 @@
+<div class="box-header"><h1>Коммерческое предложение</h1></div>
+<% if notice %><p class="warning"><%= notice %></p><% end %>
+
+<table>
+  <tbody>
+    <tr>
+      <td><strong>Текст коммерческого предложения</strong></td>
+      <td><%= @commerce.content.html_safe %></td>
+    </tr>
+  </tbody>
+</table>
+<div class="action_bar">
+<%= link_to 'Редактировать', edit_commerce_path(@commerce), class: "button" %>
+<%= link_to 'Назад', commerces_path %>
+</div>
+

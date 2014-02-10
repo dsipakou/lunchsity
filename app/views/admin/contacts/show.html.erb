@@ -1,0 +1,23 @@
+<div class="box-header"><h1>Контакты</h1></div>
+<% if notice %><p class="warning"><%= notice %></p><% end %>
+
+<table>
+  <tbody>
+    <tr>
+      <td><strong>E-mail</strong></td>
+      <td><%= @contact.email %></td>
+    </tr>
+    <tr>
+      <td><strong>ULR (ссылка на сайт)</strong></td>
+      <td><%= @contact.sitename %></td>
+    </tr>
+    <tr>
+      <td><strong>Skype</strong></td>
+      <td><%= @contact.skype %></td>
+    </tr>
+  </tbody>
+</table>
+<div class="action_bar">
+<%= link_to 'Редактировать', edit_contact_path(@contact), class: "button" %>
+<%= link_to 'Назад', contacts_path %>
+</div>

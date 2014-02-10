@@ -1,0 +1,25 @@
+<div class="box-header"><h1>Контакты</h1></div>
+<div class="dataTables_wrapper">
+    <table>
+        <thead>
+            <tr>
+                <th class="odd">E-mail</th>
+                <th>URL</th>
+                <th class="odd">Skype</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @contacts.each do |contact| %>
+                <tr>
+                    <td class="odd"><%= contact.email %></td>
+                    <td><%= contact.sitename %></td>
+                    <td class="odd"><%= contact.skype %></td>
+                    <td class="odd" style="border-right: 0;"><%= link_to (image_tag "actions-open.png"), contact %></td>
+                    <td class="odd" style="border-right: 0;"><%= link_to (image_tag "actions-edit.png"), edit_contact_path(contact) %></td>
+                    <td class="odd"><%= link_to (image_tag "actions-delete.png"), contact, method: :delete, data: { confirm: 'Ололошки, точно удалить?' } %></td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+    <div class="action_bar nomargin"><%= link_to 'Новый контакт', new_contact_path, class: "button small" if @contacts.empty? %></div>
+</div>

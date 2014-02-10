@@ -1,0 +1,22 @@
+<div class="box-header"><h1>Коммерческое предложение</h1></div>
+<div class="dataTables_wrapper">
+    <table>
+        <thead>
+            <tr>
+                <th class="odd"><% if @commerces.size > 0 %>Текст коммерческого предложения<% end %></th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @commerces.each do |commerce| %>
+                <tr>
+                    <td class="odd"><%= truncate(commerce.content.html_safe, :length => 10)  %></td>
+                    <td class="odd" style="border-right: 0;"><%= link_to (image_tag "actions-open.png"), commerce %></td>
+                    <td class="odd" style="border-right: 0;"><%= link_to (image_tag "actions-edit.png"), edit_commerce_path(commerce) %></td>
+                    <td class="odd"><%= link_to (image_tag "actions-delete.png"), commerce, method: :delete, data: { confirm: 'Ололошки, точно удалить?' } %></td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+    <div class="action_bar nomargin"><%= link_to 'Новый текст коммерческого предложения', new_commerce_path, class: "button small" if @commerces.empty? %></div>
+</div>
+

@@ -1,0 +1,25 @@
+<div class="box-header"><h1>Телефоны</h1></div>
+<div class="dataTables_wrapper">
+    <table>
+        <thead>
+            <tr>
+                <th class="odd">Номер телефона</th>
+                <th>Оператор</th>
+                <th class="odd">Телефон/Факс</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @phones.each do |phone| %>
+                <tr>
+                    <td class="odd"><%= phone.number %></td>
+                    <td><%= phone.operator %></td>
+                    <td class="odd"><%= phone.phonetype %></td>
+                    <td class="odd" style="border-right: 0;"><%= link_to (image_tag "actions-open.png"), phone %></td>
+                    <td class="odd" style="border-right: 0;"><%= link_to (image_tag "actions-edit.png"), edit_phone_path(phone) %></td>
+                    <td class="odd"><%= link_to (image_tag "actions-delete.png"), phone, method: :delete, data: { confirm: 'Ололошки, точно удалить?' } %></td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+    <div class="action_bar nomargin"><%= link_to 'Новый телефон', new_phone_path, class: "button small" %></div>
+</div>

@@ -1,0 +1,16 @@
+<div class="box-header"><h1>О нас</h1></div>
+<% if notice %><p class="warning"><%= notice %></p><% end %>
+
+<table>
+  <tbody>
+    <tr>
+      <td><strong>Текст "О нас"</strong></td>
+      <td><%= @aboutu.content.html_safe %></td>
+    </tr>
+  </tbody>
+</table>
+<div class="action_bar">
+<%= link_to 'Редактировать', edit_aboutu_path(@aboutu), class: "button" %>
+<%= link_to 'Назад', aboutus_path %>
+</div>
+

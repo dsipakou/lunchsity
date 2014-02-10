@@ -1,0 +1,24 @@
+<%= form_for(@aboutu) do |f| %>
+  <div>
+    <% if @aboutu.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@aboutu.errors.count, "error") %> prohibited this aboutus from being saved:</h2>
+
+        <ul>
+        <% @aboutu.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <p>
+      <%= f.cktext_area :content, placeholder: "О нас" %>
+    </p>
+  </div>
+  <div class="clear"></div>
+  <div class="action_bar">
+    <%= f.submit "Сохранить", class: "button blue" %>
+    <%= link_to 'Назад', aboutus_path %>
+  </div>
+<% end %>
+
