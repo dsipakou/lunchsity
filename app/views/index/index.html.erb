@@ -1,1 +1,1 @@
-<%= @commerce.content.html_safe %>
+<% unless @commerce.content.empty? %><%= @commerce.content.html_safe %><% end %>
