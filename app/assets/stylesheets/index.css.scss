@@ -670,35 +670,7 @@ ol.font_100, ul.font_100 {
     background-color: #AB0D0D;
     border-radius: 0;
 }
-.wysiwyg_viewer_skins_dropmenubutton_TextOnlyMenuButtonNSkinddm1 {
-    color: #FFFFFF;
-    cursor: pointer;
-    display: inline-block;
-    font: bold 12px/1.4em noticia text,serif;
-    transition: color 0.4s ease 0s;
-}
-.wysiwyg_viewer_skins_dropmenubutton_TextOnlyMenuButtonNSkinddm1-c-gapper {
-    padding: 0;
-}
-.wysiwyg_viewer_skins_dropmenubutton_TextOnlyMenuButtonNSkinddm1-label {
-    display: inline-block;
-    padding: 0 10px;
-}
-.wysiwyg_viewer_skins_dropmenubutton_TextOnlyMenuButtonNSkinddm1[container="drop"] {
-    display: block;
-    width: 100%;
-}
-.wysiwyg_viewer_skins_dropmenubutton_TextOnlyMenuButtonNSkinddm1[container="drop"] .wysiwyg_viewer_skins_dropmenubutton_TextOnlyMenuButtonNSkinddm1-label {
-    padding: 0 0.5em;
-}
-.wysiwyg_viewer_skins_dropmenubutton_TextOnlyMenuButtonNSkinddm1[state="over"] {
-    color: #FFAAAA;
-    transition: color 0.4s ease 0s;
-}
-.wysiwyg_viewer_skins_dropmenubutton_TextOnlyMenuButtonNSkinddm1[state="selected"] {
-    color: #FFAAAA;
-    transition: color 0.4s ease 0s;
-}
+
 .wysiwyg_viewer_skins_page_BasicPageSkinp2-bg {
     background-color: #FFFFFF;
     bottom: 0;
@@ -1207,6 +1179,52 @@ ol.font_100, ul.font_100 {
 }
 .main_text[class~="textPreloader"] {
     background: url(/assets/gif_preloader.gif) no-repeat scroll center center rgba(0, 0, 0, 0);
+}
+
+a.main-menu-label
+{
+	color: #FFF;
+}
+
+a:active 
+{
+	outline: none;
+	-moz-outline-style: none;
+}
+
+.main-menu {
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font: bold 12px/1.4em noticia text,serif;
+    transition: color 0.4s ease 0s;
+    visibility: visible; 
+    position: relative; 
+    padding: 0px 15px;
+}
+.main-menu-c-gapper {
+    padding: 0;
+}
+.main-menu-label {
+    display: inline-block;
+    padding: 0 10px;
+    line-height: 15px; 
+    width: auto;
+}
+.main-menu[container="drop"] {
+    display: block;
+    width: 100%;
+}
+.main-menu[container="drop"] .main-menu-label {
+    padding: 0 0.5em;
+}
+.main-menu[state="over"] {
+    color: #FFAAAA;
+    transition: color 0.4s ease 0s;
+}
+.main-menu[state="selected"] {
+    color: #FFAAAA;
+    transition: color 0.4s ease 0s;
 }
 
 .font_9 {

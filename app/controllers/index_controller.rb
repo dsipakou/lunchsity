@@ -3,5 +3,6 @@ class IndexController < ApplicationController
 
 	def index
   		@commerce = Commerce.first
+  		@title = "Главная"
   	end
 end

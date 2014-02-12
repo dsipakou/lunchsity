@@ -1,5 +1,6 @@
 Lunchsityby::Application.routes.draw do
 
+  get "contact/index"
   mount Ckeditor::Engine => '/ckeditor'
 
   get "index/index"
@@ -7,13 +8,15 @@ Lunchsityby::Application.routes.draw do
   root to: 'index#index', as: :main
   
   scope module: 'admin' do
-    resources :phones, path: 'admin/phones'
+    resources :phones, path: 'admin/phones', as: :phones
     resources :commerces, path: 'admin/commerce'
     resources :contacts, path: 'admin/contacts'
     resources :aboutus, path: 'admin/aboutus'
     resources :receptions, path: 'admin/reception'
     resources :lunches, path: 'admin/lunch'
   end
+
+  get 'contact', to: 'contact#index', as: :main_contact
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
