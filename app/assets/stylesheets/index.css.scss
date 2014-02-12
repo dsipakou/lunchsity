@@ -5,8 +5,8 @@
 body
 {
 	background: #2F2F2F url(/assets/bg.png) repeat;
-	font-family: Arial,Helvetica,sans-serif;
-    font-size: 10px;
+	font-family: "PT Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
 }
 
 .SITE_STRUCTURE {
@@ -25,6 +25,12 @@ a, abbr, acronym, address, applet, b, big, blockquote, body, caption, center, ci
     padding: 0;
     vertical-align: baseline;
 }
+
+h2 
+{
+	font-size: 40px;
+}
+
 
 ol, ul {
     list-style: none outside none;
@@ -762,7 +768,7 @@ ol.font_100, ul.font_100 {
 }
 .font_2 {
     color: #AB0D0D;
-    font: bold 41px/1.4em noticia text,serif;
+    font: bold 41px/1.4em;
 }
 .font_3 {
     color: #AB0D0D;
@@ -1196,7 +1202,7 @@ a:active
     color: #FFFFFF;
     cursor: pointer;
     display: inline-block;
-    font: bold 12px/1.4em noticia text,serif;
+    font: bold 26px/2.8em;
     transition: color 0.4s ease 0s;
     visibility: visible; 
     position: relative; 
