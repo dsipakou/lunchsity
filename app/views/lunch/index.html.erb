@@ -1,2 +1,2 @@
-<h1>Lunch#index</h1>
-<p>Find me in app/views/lunch/index.html.erb</p>
+<% unless @lunch.nil? %><%= @lunch.content.html_safe %><% end %>
+<%= get_xls_link %>
