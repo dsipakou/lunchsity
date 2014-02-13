@@ -1,62 +1,57 @@
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de-DE" lang="de-DE"><head>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
         <meta http-equiv="X-UA-Compatible" content="IE=7">
-
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-
 		<meta name="description" content="">
-		
 		<%= stylesheet_link_tag 'temp.css' %>
-		<link rel="stylesheet" type="text/css" href="typo3temp/stylesheet_aa64397307.css" media="all">
+		<%= javascript_include_tag "application" %>
+		<%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=PT+Sans&subset=latin,cyrillic" %>
+		<%= csrf_meta_tag %>
 		<title>LunchSity.by</title>
-		</head>
-<body>
-
-	<div id="site" class="template-home">
-
-		<div class='container'>
-			<div class="main_text" style="top:25; position: relative;"><h2><%= @title %></h2>
+	</head>
+	<body>
+		<div id="bgNode"></div>
+		<div id="site" class="template-home">
+			<div class='container'>
+				<div class="main_text" style="top:25; position: relative;"><h2><%= @title %></h2>
+				</div>
+				<div style="visibility: visible; left: 704px; top: 42px; min-width: 255px; min-height: 5px; position: absolute;" class="header_line"></div>
+				<div style="visibility: visible; left: 704px; top: 67px; min-width: 255px; min-height: 5px; position: absolute;" class="header_line"></div>
+				<div style="visibility: visible; left: 19px; top: 67px; min-width: 255px; min-height: 5px; position: absolute;" class="header_line"></div>
+				<div style="visibility: visible; left: 19px; top: 42px; min-width: 255px; min-height: 5px; position: absolute;" class="header_line"></div>
+				<div id="content" class="content"><%= yield %></div>
+				<div style="clear:both;"></div>
 			</div>
-			<div style="visibility: visible; left: 704px; top: 42px; min-width: 255px; min-height: 5px; position: absolute;" class="header_line"></div>
-			<div style="visibility: visible; left: 704px; top: 67px; min-width: 255px; min-height: 5px; position: absolute;" class="header_line"></div>
-			<div style="visibility: visible; left: 19px; top: 67px; min-width: 255px; min-height: 5px; position: absolute;" class="header_line"></div>
-			<div style="visibility: visible; left: 19px; top: 42px; min-width: 255px; min-height: 5px; position: absolute;" class="header_line"></div>
-			<div id="content" class="content"><%= yield %></div><!-- #content -->
-			<div style="clear:both;"></div>
+			<div id="footer">
+				<div class="main_text" id="WRchTxt8"><p style="line-height: 1.4em;" class="font_9">©&nbsp;<%= Time.now.year %>&nbsp;LunchSity</p>
+				</div>
+			</div>
+
+			<div id="header">
+				<div class="header-top" style="width: 975px; min-height: 35px; position: absolute;">
+					<div class="header-top" skinpart="bg"></div>
+				</div>
+				<div class="menu-image">
+					<a>
+						<div>
+							<img src="/assets/menu-panel.png">
+						</div>
+					</a>
+				</div>
+				<div style="visibility: visible; width: 675px; left: 300px; top: 53px; min-height: 15px; position: absolute;">
+					<%= render 'index/navi' %>
+					<div style="display: none; visibility: hidden; opacity: 0;" class="wysiwyg_viewer_skins_dropmenu_TextOnlyMenuNSkinddm1-dropWrapper" skinpart="dropWrapper">
+						<div class="wysiwyg_viewer_skins_dropmenu_TextOnlyMenuNSkinddm1-moreContainer" skinpart="moreContainer"></div>
+					</div>
+				</div>
+				<div title="" style="visibility: visible; left: 59px; top: 14px; min-width: 172px; min-height: 131px; position: absolute;" class="wysiwyg_viewer_skins_photo_RoundPhotowp1 " state="noTouch" angle="0" scale="1" y="14" x="59" height="131" width="172" propertyquery="#WPht1" dataquery="#c1vb5" styleid="wp1" skin="wysiwyg.viewer.skins.photo.RoundPhoto" comp="wysiwyg.viewer.components.WPhoto" id="WPht1">
+					<a style="cursor: default;" class="wysiwyg_viewer_skins_photo_RoundPhotowp1-link" skinpart="link">
+						<div dataquery="#c1vb5" styleid="" style="visibility: visible; width: 170px; height: 129px;" id="mgNw0-130z" comp="core.components.image.ImageNew" class="wysiwyg_viewer_skins_photo_RoundPhotowp1-img skins_core_ImageNewSkin" skinpart="img" skin="skins.core.ImageNewSkin">
+							<img style="margin-top: 0px; margin-left: 0px; width: 170px; height: 129px;" src="/assets/logo.png" alt="" class="skins_core_ImageNewSkin-image" skinpart="image">
+						</div>
+					</a>
+				</div>	
+			</div>
 		</div>
-
-		<div id="footer">
-			<div class="main_text" id="WRchTxt8"><p style="line-height: 1.4em;" class="font_9"><span class="color_11">©&nbsp;<%= Time.now.year %>&nbsp;LunchSity</span></p>
-			</div>
-		</div><!-- #footer -->
-
-<div id="header">
-	<div class="wysiwyg_viewer_skins_screenwidthcontainer_DefaultScreenhc2-bg" skinpart="bg"></div>
-	<div class="wysiwyg_viewer_skins_area_RectangleAreac3" skin="wysiwyg.viewer.skins.area.RectangleArea" styleid="c3" style="visibility: visible; top: -5px; width: 980px; min-height: 35px; position: absolute;" angle="0" scale="1" y="-5" x="0" height="35" width="980" comp="mobile.core.components.Container" id="Cntnr0">
-		<div class="wysiwyg_viewer_skins_area_RectangleAreac3-bg" skinpart="bg"></div>
-	</div>
-	<div title="" style="visibility: visible; left: -61px; top: 49px; min-width: 1102px; min-height: 70px; position: absolute;" class="wysiwyg_viewer_skins_photo_RoundPhotowp1 " state="noTouch" angle="0" scale="1" y="49" x="-61" height="70" width="1102" propertyquery="#WPht0" dataquery="#c15lw" styleid="wp1" skin="wysiwyg.viewer.skins.photo.RoundPhoto" comp="wysiwyg.viewer.components.WPhoto" id="WPht0">
-		<a style="cursor: default;" class="wysiwyg_viewer_skins_photo_RoundPhotowp1-link" skinpart="link">
-			<div dataquery="#c15lw" styleid="" style="visibility: visible; width: 1100px; height: 68px;" id="mgNw1-7fp" comp="core.components.image.ImageNew" class="wysiwyg_viewer_skins_photo_RoundPhotowp1-img skins_core_ImageNewSkin" skinpart="img" skin="skins.core.ImageNewSkin">
-				<img style="margin-top: 0px; margin-left: 0px; width: 1100px; height: 68px;" src="//static.wixstatic.com/media/41d000_02cae4ebb07b25ff058e52a22c9f5528.png_srz_p_1100_68_75_22_0.50_1.20_0.00_png_srz" alt="" class="skins_core_ImageNewSkin-image" skinpart="image">
-			</div>
-		</a>
-	</div>
-	<div style="visibility: visible; width: 675px; left: 300px; top: 53px; min-height: 15px; position: absolute;">
-		<%= render 'index/navi' %>
-		<div style="display: none; visibility: hidden; opacity: 0;" class="wysiwyg_viewer_skins_dropmenu_TextOnlyMenuNSkinddm1-dropWrapper" skinpart="dropWrapper">
-			<div class="wysiwyg_viewer_skins_dropmenu_TextOnlyMenuNSkinddm1-moreContainer" skinpart="moreContainer"></div>
-		</div>
-	</div>
-	<div title="" style="visibility: visible; left: 59px; top: 14px; min-width: 172px; min-height: 131px; position: absolute;" class="wysiwyg_viewer_skins_photo_RoundPhotowp1 " state="noTouch" angle="0" scale="1" y="14" x="59" height="131" width="172" propertyquery="#WPht1" dataquery="#c1vb5" styleid="wp1" skin="wysiwyg.viewer.skins.photo.RoundPhoto" comp="wysiwyg.viewer.components.WPhoto" id="WPht1">
-		<a style="cursor: default;" class="wysiwyg_viewer_skins_photo_RoundPhotowp1-link" skinpart="link">
-			<div dataquery="#c1vb5" styleid="" style="visibility: visible; width: 170px; height: 129px;" id="mgNw0-130z" comp="core.components.image.ImageNew" class="wysiwyg_viewer_skins_photo_RoundPhotowp1-img skins_core_ImageNewSkin" skinpart="img" skin="skins.core.ImageNewSkin">
-				<img style="margin-top: 0px; margin-left: 0px; width: 170px; height: 129px;" src="//static.wixstatic.com/media/41d000_974d632333c2609b28012c2f22e44bc3.png_srz_p_170_129_75_22_0.50_1.20_0.00_png_srz" alt="" class="skins_core_ImageNewSkin-image" skinpart="image">
-			</div>
-		</a>
-	</div>	
-</div><!-- #header -->
-
-</div><!-- #site --><!-- shadow-1 --><!-- shadow-2 --><!-- shadow-3 --><!-- shadow-4 --><!-- shadow-5 -->
-
-
-<div id="sbOverlay" style="display: none;"></div><div id="sbCenter" style="display: none;"><div id="sbImage"><div style="position: relative;"><a id="prevLink" href="#"></a><a id="nextLink" href="#"></a></div></div></div><div id="sbBottomContainer" style="display: none;"><div id="sbBottom"><a id="closeLink" href="#"></a><a id="playLink" href="#"></a><a id="pauseLink" href="#"></a><a id="saveLink" href="#" target="_blank"></a><div id="sbCaption"></div><div id="sbNumber"></div><div id="sbPresent"></div><div style="clear: both;"></div></div></div></body></html>
+	</body>
+</html>

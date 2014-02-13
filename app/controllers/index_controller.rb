@@ -1,5 +1,5 @@
 class IndexController < ApplicationController
-	layout "frontend"
+	layout "test"
 
 	def index
   		@commerce = Commerce.first
