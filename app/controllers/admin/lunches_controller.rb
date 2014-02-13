@@ -30,8 +30,8 @@ class Admin::LunchesController < ApplicationController
       if @lunch.save
         unless params[:lunch][:file].nil?
           upload_file = params[:lunch][:file]
-          FileUtils.rm_rf(Dir.glob(File.join('public', 'uploads', "*.xls")))
-          File.open(Rails.root.join('public', 'uploads',
+          FileUtils.rm_rf(Dir.glob(File.join('public', 'uploads', 'lunch', "*.*")))
+          File.open(Rails.root.join('public', 'uploads', 'lunch',
             upload_file.original_filename), 'wb') do |file|
               file.write(upload_file.read)
           end
@@ -52,8 +52,8 @@ class Admin::LunchesController < ApplicationController
       if @lunch.update(lunch_params)
         unless params[:lunch][:file].nil?
           upload_file = params[:lunch][:file]
-          FileUtils.rm_rf(Dir.glob(File.join('public', 'uploads', "*.xls")))
-          File.open(Rails.root.join('public', 'uploads',
+          FileUtils.rm_rf(Dir.glob(File.join('public', 'uploads', 'lunch', "*.*")))
+          File.open(Rails.root.join('public', 'uploads', 'lunch',
             upload_file.original_filename), 'wb') do |file|
               file.write(upload_file.read)
           end

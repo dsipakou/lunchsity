@@ -1,2 +1,2 @@
 <% unless @lunch.nil? %><%= @lunch.content.html_safe %><% end %>
-<%= get_xls_link %>
+<% unless @file.nil? %>Скачать прайс-лист можно <%= get_download_link %>.<% end %>

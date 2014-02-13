@@ -1,7 +1,7 @@
 module LunchHelper
-	def get_xls_link
+	def get_download_link
 		unless @file.nil?
-			link_to "download", "#{@file.first}", download: :download
+			link_to "здесь", "#{@file.first}", download: :download
 		end
 	end
 end

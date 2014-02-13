@@ -1,5 +1,5 @@
 class ContactController < ApplicationController
-	layout "frontend"
+	layout "test"
   def index
   	@title = "Контакты"
   	@contact = Contact.first

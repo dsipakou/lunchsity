@@ -1,2 +1,3 @@
-<h1>Reception#index</h1>
-<p>Find me in app/views/reception/index.html.erb</p>
+<% unless @reception.nil? %><%= @reception.content.html_safe %><% end %>
+<% unless @file.nil? %>Скачать перечень блюд можно <%= get_download_link %>.<% end %>
+

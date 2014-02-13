@@ -29,6 +29,14 @@ class Admin::ReceptionsController < ApplicationController
 
     respond_to do |format|
       if @reception.save
+        unless params[:reception][:file].nil?
+          upload_file = params[:reception][:file]
+          FileUtils.rm_rf(Dir.glob(File.join('public', 'uploads', 'lunch', "*.*")))
+          File.open(Rails.root.join('public', 'uploads', 'recept',
+            upload_file.original_filename), 'wb') do |file|
+              file.write(upload_file.read)
+          end
+        end 
         format.html { redirect_to @reception, notice: 'Reception was successfully created.' }
         format.json { render action: 'show', status: :created, location: @reception }
       else
@@ -43,6 +51,15 @@ class Admin::ReceptionsController < ApplicationController
   def update
     respond_to do |format|
       if @reception.update(reception_params)
+        unless params[:reception][:file].nil?
+          upload_file = params[:reception][:file]
+          FileUtils.rm_rf(Dir.glob(File.join('public', 'uploads', 'lunch', "*.*")))
+          File.open(Rails.root.join('public', 'uploads', 'recept',
+            upload_file.original_filename), 'wb') do |file|
+              file.write(upload_file.read)
+          end
+        end 
+
         format.html { redirect_to @reception, notice: 'Reception was successfully updated.' }
         format.json { head :no_content }
       else
